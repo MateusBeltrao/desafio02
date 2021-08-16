@@ -11,8 +11,8 @@ class App extends Component {
     }
   }
 
-  criarform(email, confirmaEmail, nome, sobreNome, cpf){
-    const novaNota = {email, confirmaEmail, nome, sobreNome, cpf}
+  criarform(email, confirmaEmail, nome, sobreNome, cpf, data, option){
+    const novaNota = {email, confirmaEmail, nome, sobreNome, cpf, data, option}
     const novoArrayNotas = [...this.state.notas , novaNota]
     const novoEstado = {
       notas:novoArrayNotas
@@ -22,9 +22,9 @@ class App extends Component {
 
   render (){
     return(
-      <section>
+      <section className="conteudo">
         <Form criarform={this.criarform.bind(this)}></Form>
-        <Lista notas={this.state.notas}></Lista>
+        <Lista className="conteudo-principal" notas={this.state.notas}></Lista>
       </section>
     )
   }
